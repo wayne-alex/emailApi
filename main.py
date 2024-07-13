@@ -47,7 +47,7 @@ def send_email_smtp(from_email, to_email, subject, html_message):
     server.quit()
 
 
-@app.route('', methods=['GET'])
+@app.route('/', methods=['GET'])
 def health_check():
     return jsonify({'message': 'Hello world!, This service is running as expected'}), 200
 
