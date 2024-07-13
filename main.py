@@ -1,3 +1,4 @@
+# main.py
 import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -46,10 +47,10 @@ def send_email_smtp(from_email, to_email, subject, html_message):
     server.quit()
 
 
-@app.route('/', methods=['GET'])
+@app.route('', methods=['GET'])
 def health_check():
     return jsonify({'message': 'Hello world!, This service is running as expected'}), 200
 
 
 if __name__ == '__main__':
-    app.run(port=456)
+    app.run(debug=True)
